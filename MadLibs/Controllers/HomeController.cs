@@ -8,26 +8,32 @@ namespace MadLibs.Controllers
     public string Hello() { return "Hello friend!"; }
 
     [Route("/")]
-    public ActionResult Story()
+    public ActionResult Homepage()
     {
-      StoryVariable myLetterVariable = new StoryVariable();
-      myLetterVariable.Name = "__Name__";
-      myLetterVariable.Person1 = "__Celebrity__";
-      myLetterVariable.Person2 = "__Celebrity2__";
-      myLetterVariable.Animal = "__Animal__";
-      myLetterVariable.Exclamation = "__Exclamation__";
-      myLetterVariable.Verb = "__Verb__";
-      myLetterVariable.Noun = "__Noun__";
-      return View(myLetterVariable);
+      return View();
     }
 
-    [Route("/form")]
-    public ActionResult Form() { return View(); }
+    [Route("/puppyForm")]
+    public ActionResult PuppyForm() { return View();}
 
-    [Route("/filledstory")]
-    public ActionResult Filledstory(string name, string noun, string verb, string person1, string person2, string exclamation, string animal)
+    [Route("/puppyStory")]
+    public ActionResult PuppyStory(string name, string noun, string verb, string bark)
     {
-      StoryVariable myLetterVariable = new StoryVariable();
+      PuppyVariable myPuppyVariable= new PuppyVariable();
+      myPuppyVariable.Name = name;
+      myPuppyVariable.Noun = noun;
+      myPuppyVariable.Verb = verb;
+      myPuppyVariable.Bark = bark;
+      return View(myPuppyVariable);
+    }
+
+    [Route("/celebForm")]
+    public ActionResult CelebForm() { return View(); }
+
+    [Route("/celebStory")]
+    public ActionResult CelebStory(string name, string noun, string verb, string person1, string person2, string exclamation, string animal)
+    {
+      CelebVariable myLetterVariable = new CelebVariable();
       myLetterVariable.Name = name;
       myLetterVariable.Noun = noun;
       myLetterVariable.Verb = verb;

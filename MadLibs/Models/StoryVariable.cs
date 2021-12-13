@@ -1,6 +1,6 @@
 namespace MadLibs.Models
 {
-  public class StoryVariable
+  public class CelebVariable
   {
     public string Name { get; set; }
     public string Person1 { get; set; }
@@ -11,4 +11,5 @@ namespace MadLibs.Models
     public string Noun { get; set; }
 
   }
+
 }
